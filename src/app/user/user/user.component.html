@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-3 py-5 bg-dark text-white">
+         <p class="display-5 text-center">Writes Blog</p>
+         <p class="fs-2 text-center">User Panel</p>
+         <hr>
+         <ul class="list-group">
+            <li class="list-group-item bg-dark py-3 "><a href="" class="text-danger">Home</a></li>
+            <li class="list-group-item bg-dark py-3 "><a href="/user/profile" class="text-danger">PROFILE</a></li>
+            <li class="list-group-item bg-dark py-3 "><a href="/user/add" class="text-danger">Write Article</a></li>
+            <li class="list-group-item bg-dark py-3 "><a href="/user/view"  class="text-danger">My Articles</a></li>
+            <li class="list-group-item bg-danger py-3"><a (click)="logOut()"class="text-white">Logout</a></li>
+       
+         </ul>
+    </div>
+
+    
+
+<diV  class="col-md-9 bg-secondary-subtle " style="min-height:100vh ;" >
+
+<router-outlet></router-outlet>
+</diV>
+</div>
+
+

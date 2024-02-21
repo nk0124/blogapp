@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="row">
+    <div class="col p-5 ">
+       <P class="display-5 text-danger mb-5 pt-5">Edit Profile</P>
+       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="First Name" class="form-control" formControlName="firstName"/>
+                    <label>First Name</label>
+                     </div>
+                     </div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="Last Name" class="form-control" formControlName="lastName"/>
+                    <label>Last Name</label>
+                   
+            </div>
+     </div>
+     </div>
+     <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="date"  class="form-control" formControlName="dob"/>
+                <label>DOB</label>
+                  
+          </div>
+          </div>
+        <div class="col">
+            <div class="form-floating mb-4">
+            <select class="form-control" formControlName="gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+            </select>
+            <label>Gender</label>
+          </div>     
+        </div>
+     </div>
+     <div class="row">
+        <div class="col">
+            <div class="form-floating mb-4">
+                <input type="text" placeholder="city" class="form-control" formControlName="city"/>
+                <label>City</label>
+                </div>
+             
+        </div>
+        <div class="col">
+            <div class="form-floating mb-4">
+                <input type="state" placeholder="state" class="form-control" formControlName="state"/>
+                <label>State</label>
+                </div>
+            
+        </div>
+       
+       </div>
+       <div class="row">
+        <div class="col">
+            <div class="form-floating mb-4">
+                <input type="tel" placeholder="Phone No" class="form-control" formControlName="phoneNo"/>
+                <label>Phone No</label>
+                </div>
+                </div>
+       <div class="col">
+        <button class="btn btn-danger py-3 w-100"[disabled]="!userForm.valid">Update</button>
+        </div>
+        </div>
+       </form>
+       <p class="p-3 text-primary mt-4">{{umsg}}</p>
+       </div>
+
+    <div class="col-5  p-5">
+        <p class="display-5 text-danger mb-5 pt-5">Change Password</p>
+<form [formGroup]="passForm" (ngSubmit)="onChange()">
+   <div class="form-floating mb-3">
+    <input type="password" placeholder="New Password" class="form-control" formControlName="password"/>
+    <label>New Password</label>
+    </div>
+    <div class="form-floating mb-4">
+        <input type="password" placeholder="Repeat Password" class="form-control" formControlName="rpassword"/>
+        <label> Repeat Password</label>
+        </div>
+        <div class="text-end">
+        <button class="btn btn-danger px-5 "[disabled]="!passForm.valid">Change</button>
+        </div>
+     </form>
+     <P class="p-3 text-primary mt-4">{{pmsg}}</P>
+ </div>
+</div>
+</div>
+

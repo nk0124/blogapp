@@ -1,0 +1,30 @@
+<h1 class="text-danger py-4 " >Articles</h1>
+<i class="bi bi-2-circle-fill"></i>
+<hr>
+<table class="table">
+<thead>
+<tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Aprove/Reject</th>
+</tr> 
+
+</thead> 
+<tbody>
+<tr *ngFor="let article of articleData">
+    <td><img [src]="article.image" width="80px" ></td>
+    <td>{{article.title}}</td>
+    <td>{{article.date | date:'mediumDate'}}</td>
+    <td>
+        <button class="btn btn-success btn-sm" *ngIf="article.hidden" (click)="statusUpdate(article._id,false)">Aprove</button>
+        <button  class="btn btn-danger btn-sm"*ngIf="!article.hidden" (click)="statusUpdate(article._id,true)">Reject</button>
+        
+        
+    </td>
+  
+    </tr>  
+   
+ </tbody>   
+</table>
+

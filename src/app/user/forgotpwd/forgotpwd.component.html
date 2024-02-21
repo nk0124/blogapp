@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row justify-content-center  mt-5">
+    <div class="col-5 p-5 bg-secondary-subtle mt-5">
+       <P class="display-5 text-danger mb-3 mt-1 pt-5">Recover Password</P>
+       <p>Please enter the email You use to sign in</p>
+
+       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+         <input type="email" placeholder="Email Address" class="form-control" formControlName="emailId"/>
+         <label>Email Address</label>
+         </div>
+              <div class="text-end">
+             <button class="btn btn-light px-5 text-danger" [disabled]="!userForm.valid">Submit Request</button>
+             </div>
+          </form>
+          <p class="p-3 text-primary mt-4">{{msg}}</p>
+          
+      </div>
+     </div>
+     </div>
+           

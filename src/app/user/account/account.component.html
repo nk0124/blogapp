@@ -1,0 +1,81 @@
+<!--phele humne design ki sab ki components ki then form ko reactive bnaya hai reactive form module ko import kerke then ts mai form or function bnaya -->
+<div class="container-fluid">
+    <div class="row">
+    <div class="col p-5 bg-secondary-subtle" style='height:100vh'>
+       <P class="display-5 text-danger mb-5 pt-5">Create An Account</P>
+       <form  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="First Name" class="form-control" formControlName="firstName"/>
+                    <label>First Name</label>
+                     </div>
+                     </div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" placeholder="Last Name" class="form-control" formControlName="lastName"/>
+                    <label>Last Name</label>
+                   
+            </div>
+     </div>
+     </div>
+     <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="email" placeholder="Email Address" class="form-control" formControlName="emailId"/>
+                <label>Email Address</label>
+                  
+          </div>
+          </div>
+        <div class="col">
+            <div class="form-floating mb-4">
+            <input type="tel" placeholder="Phone No" class="form-control" formControlName="phoneNo"/>
+            <label>Phone No</label>
+          </div>     
+        </div>
+     </div>
+     <div class="row">
+        <div class="col">
+            <div class="form-floating mb-4">
+                <input type="password" placeholder="password" class="form-control" formControlName="password"/>
+                <label>Password</label>
+                </div>
+             
+        </div>
+        <div class="col">
+            <div class="form-floating mb-4">
+                <input type="password" placeholder="password" class="form-control" formControlName="rpassword"/>
+                <label>Password</label>
+                </div>
+            
+        </div>
+       
+       </div>
+       <div class="">
+        <button class="btn btn-danger" [disabled]="!userForm.valid">Register</button>
+        </div>
+    
+       </form>
+       <p class="p-3 text-primary mt-4">{{umsg}}</p>
+       </div>
+
+    <div class="col p-5 bg-danger">
+        <p class="display-5 text-white mb-5 pt-5">User Login</p>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+   <div class="form-floating mb-3">
+    <input type="email" placeholder="Email Address" class="form-control" formControlName="emailId"/>
+    <label>Email Address</label>
+    </div>
+    <div class="form-floating mb-4">
+        <input type="password" placeholder="password" class="form-control" formControlName="password"/>
+        <label>Password</label>
+        </div>
+        <div class="text-end">
+        <button class="btn btn-light px-5 text-danger" [disabled]="!loginForm.valid">Sign In</button>
+        </div>
+     </form>
+     <p class="p-3 text-primary mt-4">{{lmsg}}</p>
+     <p><a class="text-white text-decoration-none">Forgot Password</a></p>
+ </div>
+</div>
+</div>

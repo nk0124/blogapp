@@ -1,0 +1,26 @@
+<h1 class="text-danger py-4 " >Users</h1>
+<hr>
+<table class="table">
+<thead>
+<tr>
+    <th>Full Name</th>
+    <th>Gender , DOB</th>
+    <th>EmailId</th>
+    <th>PhoneNO</th>
+    <th>City ,State</th>
+    <th>Date</th>
+</tr> 
+
+</thead> 
+<tbody>
+<tr *ngFor="let user of userData">
+    <td>{{user.firstName}} {{user.lastName}}</td>
+    <td>{{user.gender}} ,{{user.dob | date :'mediumDate'}}</td>
+    <td>{{user.emailId}}</td>
+    <td>{{user.phoneNo}}</td>
+    <td>{{user.city}} ,{{user.state}}</td>
+    <td>{{user.date | date:'mediumDate'}}</td>
+    </tr>  
+
+ </tbody>   
+</table>

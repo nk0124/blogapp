@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row justify-content-center  mt-5">
+    <div class="col-5 p-5 bg-secondary-subtle mt-5">
+       <P class="display-5 text-danger mb-5 mt-3 pt-5">Reset Your Password</P>
+
+       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+         <input type="text" placeholder="verify code" class="form-control" formControlName="code"/>
+         <label>Verify Code</label>
+         </div>
+         <div class="form-floating mb-4">
+             <input type="password" placeholder="password" class="form-control" formControlName="password"/>
+             <label>Password</label>
+             </div>
+             <div class="form-floating mb-4">
+                <input type="password" placeholder="password" class="form-control" formControlName="rpassword"/>
+                <label>Password</label>
+                </div>
+           
+             <div class="text-end">
+             <button class="btn btn-light px-5 text-danger" [disabled]="!userForm.valid">Reset Password</button>
+             </div>
+          </form>
+          <p class="p-3 text-primary mt-4">{{msg}}</p>
+      </div>
+     </div>
+     </div>
+           

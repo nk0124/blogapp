@@ -1,0 +1,31 @@
+<div class="" style="background:url('./assets/pics.jpg'); background-size: cover;">
+  <div class="py-5 text-center" style="background-color: rgba(0,0,0,0.8);">
+     <h4 class="mt-5" style="color: palevioletred;">WORKING TO BULID BETTER BLOG</h4>
+     <p class="mb-5 display-5 text-white" >Supercharge Your Online Presence And Get NOticed</p>
+  </div>
+</div>
+<div class="container py-5 ">
+  <p class="text-center display-3 text-danger mb-4">Browse By Category</p>
+  <div class="row">
+    <div class="col text-center py-5 border bg-white  mb-3" *ngFor ="let category of categoryData ">
+      <a [routerLink]="['/blog',category._id]" class="text-dark text-decoration-none">
+        <i class=" text-danger fs-2 bi bi-{{category.icon}}"></i>
+        <h3>{{category.title}}</h3>
+      </a>
+
+     </div>
+     </div>
+     <p class="text-center display-3 text-danger mb-4">Recent Articles</p>
+    <div class="row">
+        <div class="col-4 mb-3" *ngFor ="let article of articleData ">
+            <div class="card">
+                <img [src]="article.image" class="card-img-top" alt="..." height="250px mt-4 mb-4"  >
+                <div class="card-body">
+                  <h5 class="card-title">{{article.title}}</h5>
+                  <p class="card-text">{{article.date}}</p>
+                  <a [routerLink]="['/article',article._id]" class="btn btn-danger">Read Full Article</a>
+                </div>
+              </div> 
+        </div> 
+    </div>
+</div>

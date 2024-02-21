@@ -1,0 +1,52 @@
+<div class="container">
+    <P class="display-5 text-danger mb-5 pt-5">Edit Articles</P>
+    
+    
+           <div class="row">
+             <div class="col">
+                <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+                 <div class="form-floating mb-4">
+                     <input type="text" placeholder="Articles Title" class="form-control" formControlName="title"/>
+                     <label>Article Title</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <select class="form-control" formControlName="category">
+                           <option *ngFor="let c of categories " [value]="c._id">{{c.title}}</option>
+                        </select>
+                        <label>Select Category</label>
+                         </div>
+                       
+                         <div class="form-floating mb-4">
+                            <textarea class="form-control h-100" formControlName="body"></textarea>
+                            <label>Type Content</label>
+                             </div>
+                        
+                             <div class="text-end">
+                                <button class="btn btn-danger px-5 " [disabled]="!articleForm.valid">Save Article</button>
+                                </div>
+                          </form>
+                          <p class="p-3 text-primary mt-4">{{msg}}</p>
+                      </div>
+
+                 <div class="col-4">
+                    <img [src]="article.image" class="w-100 border p-1 " height="200px">
+                    <h3>Change Image</h3> 
+                    <form [formGroup]="imageForm">
+                     <div class="form-floating mb-4">
+                         <input type="file"  class="form-control"/>
+                         <label>Article Image</label>
+                          </div>
+                          </form>
+                          </div>
+                          </div>
+                          
+                        
+                               
+
+                             
+                 
+
+
+
+
+

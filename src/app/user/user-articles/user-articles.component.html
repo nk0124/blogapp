@@ -1,0 +1,26 @@
+<h1 class="text-danger py-4 " >Articles</h1>
+<hr>
+<table class="table">
+<thead>
+<tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr> 
+
+</thead> 
+<tbody>
+<tr *ngFor="let article of articleData">
+    <td><img [src]="article.image" width="80px"  height="80px"></td>
+    <td>{{article.title}}</td>
+    <td>{{article.date | date:'mediumDate'}}</td>
+    <td><a [routerLink]="['/user/edit',article._id]">Edit</a></td>
+    <td><a   (click)="onDelete(article._id)">Del</a></td>
+    </tr>  
+
+ </tbody>   
+</table>
+
+

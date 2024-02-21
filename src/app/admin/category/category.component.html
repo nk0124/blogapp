@@ -1,0 +1,39 @@
+<div class="container">
+<p class="display-5">Manage Category</p><hr>
+<diV class="row">
+<div class="col-6">
+<p class="fs-4">Add New Category</p>
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+<div class="mb-3">
+<label>Type Category Name</label>
+<input type="text" class="form-control" formControlName="title">
+</div>
+<div class="mb-3">
+ <label>Type Icon Name</label>
+ <input type="text" class="form-control" formControlName="icon">
+ </div>
+ <button class="btn btn-danger" type="submit" [disabled]="!categoryForm.valid">Save Cattegory</button>   
+
+</form>
+<p class="p-3 text-primary mt-4">{{smsg}}</p>
+
+</div>
+<div class="col-6">
+<p class="fs-4">Categories</p>
+<table class="table table-bordered table-striped table-hover">
+<thead><tr><th>Category</th> <th>Action</th></tr></thead>
+<tbody>
+<tr *ngFor="let d of data">
+<td><i class="bi bi-{{d.icon}}"></i> {{d.title}}</td>
+ <td><a (click)="onDelete(d._id)" class="text-danger">Delete</a></td>
+</tr>
+</tbody>
+</table>
+<p class="p-3 text-danger mt-4">{{dmsg}}</p>
+</div>
+</diV>
+</div>
+
+
+
+
